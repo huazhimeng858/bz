@@ -10,7 +10,8 @@ spa.shell = (function () {
             user_idcard_info_warning:false,
             wrong_info_put:true,
             name_warning_text:'姓名不合法或不为空',
-            id_card_warning_text:'身份证不合法或不为空'
+            id_card_warning_text:'身份证不合法或不为空',
+            again_submit:false
         },
     ////   模块的动态信息
         stateMap  = {
@@ -52,6 +53,10 @@ spa.shell = (function () {
             //jqueryMap.$user_login.removeAttr("disabled");
             jqueryMap.$user_login.on('click',function(){
                 //jqueryMap.$user_login.attr("disabled","disabled");
+                if(configMap.again_submit==true){
+                    return false;
+                }
+                onChecksubmit();
                 return true;
             });
         }else{
@@ -61,6 +66,9 @@ spa.shell = (function () {
             });
             //jqueryMap.$user_login.attr("disabled","disabled");
         }
+    };
+    function onChecksubmit(){
+        configMap.again_submit=true;
     };
     function onNameWarning_info(){
         if(configMap.user_name_info_warning){
