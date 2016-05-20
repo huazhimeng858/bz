@@ -61,46 +61,28 @@
                                     </h4>
 
                                     <div class="space-6"></div>
-
-                                    <form id="phone-signin" name="phone-signin" action="code.php" method="post">
-                                        <fieldset>
-                                            <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="text" id="inputPhone" name="inputPhone" class="form-control user-phone" placeholder="手机号" />
-															<i class="ace-icon fa fa-mobile-phone"></i>
-														</span>
-                                                <div class="info-warning">
-                                                    <span class="label label-warning phone-warning-info">请输入手机号</span>
-                                                </div>
-                                            </label>
-                                            <label class="inline clearfix user-code">
-                                                <button type="submit" class="get-testcode">获取验证码</button><input type="text" id="inputTestCode" name="inputTestCode" class="user-testcode" placeholder="输入验证码" />
-                                            </label>
-                                            <div class="space-4"></div>
-                                        </fieldset>
-                                    </form>
                                     <form id="form-signin" name="form-signin" action="web.php" method="post">
                                         <fieldset>
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" id="inputNumber" name="inputNumber" class="form-control" placeholder="票号" />
+															<span type="text" class="form-control">票号</span>
 															<i class="ace-icon fa fa-file-word-o"></i>
 														</span>
                                                 <!--<div class="info-warning">-->
-                                                    <!--<span class="label label-warning name-warning-info">请输入票号</span>-->
+                                                <!--<span class="label label-warning name-warning-info">请输入票号</span>-->
                                                 <!--</div>-->
                                             </label>
 
 
-                                            <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="text" id="inputName" name="inputName" class="form-control user-name" placeholder="姓名" />
-															<i class="ace-icon fa fa-user"></i>
-														</span>
-                                                <div class="info-warning">
-                                                    <span class="label label-warning name-warning-info">请输入姓名</span>
-                                                </div>
-                                            </label>
+                                            <!--<label class="block clearfix">-->
+														<!--<span class="block input-icon input-icon-right">-->
+															<!--<input type="text" id="inputName" name="inputName" class="form-control user-name" placeholder="姓名" />-->
+															<!--<i class="ace-icon fa fa-user"></i>-->
+														<!--</span>-->
+                                                <!--<div class="info-warning">-->
+                                                    <!--<span class="label label-warning name-warning-info">请输入姓名</span>-->
+                                                <!--</div>-->
+                                            <!--</label>-->
 
 
                                             <label class="block clearfix">
@@ -117,19 +99,55 @@
 
                                             <div class="clearfix">
                                                 <!--<label class="inline">-->
-                                                    <!--<input type="checkbox" class="ace" />-->
-                                                    <!--<span class="lbl"> 记住</span>-->
+                                                <!--<input type="checkbox" class="ace" />-->
+                                                <!--<span class="lbl"> 记住</span>-->
                                                 <!--</label>-->
 
                                                 <button type="submit" class="width-35 pull-right btn btn-sm btn-primary user-login">
                                                     <i class="ace-icon fa fa-key"></i>
-                                                    <span class="bigger-110">录入</span>
+                                                    <span class="bigger-110">绑定</span>
                                                 </button>
                                             </div>
 
                                             <div class="space-4"></div>
                                         </fieldset>
                                     </form>
+                                    <form id="phone-signin" name="phone-signin" action="code.php" method="post">
+                                        <fieldset>
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" id="inputPhone" name="inputPhone" class="form-control user-phone" placeholder="手机号" />
+															<i class="ace-icon fa fa-mobile-phone"></i>
+														</span>
+                                                <div class="info-warning">
+                                                    <span class="label label-warning phone-warning-info">请输入手机号</span>
+                                                </div>
+                                            </label>
+                                            <label class="inline clearfix user-code">
+                                                <input type="text" id="inputTestCode" name="inputTestCode" class="user-testcode" placeholder="输入验证码" />&nbsp;<button type="submit" class="get-testcode">获取验证码</button><span class="time-clock"></span>
+                                            </label>
+                                            <div class="space-4"></div>
+
+                                        </fieldset>
+                                    </form>
+
+                                    <form id="sure-signin" name="sure-signin" action="sure.php" method="post">
+                                        <fieldset>
+                                            <div class="clearfix">
+                                                <!--<label class="inline">-->
+                                                <!--<input type="checkbox" class="ace" />-->
+                                                <!--<span class="lbl"> 记住</span>-->
+                                                <!--</label>-->
+
+                                                <button type="submit" class="width-35 pull-right btn btn-sm btn-primary user-sure">
+                                                    <i class="ace-icon fa fa-key"></i>
+                                                    <span class="bigger-110">确定</span>
+                                                </button>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+
+
 
                                     <!--<div class="social-or-login center">-->
                                         <!--<span class="bigger-110">第三方登录</span>-->
@@ -376,7 +394,7 @@
 <!--</script>-->
 <script src="js/bootstrap.js"></script>
 <script src="js/spa.js"></script>
-<script src="js/spa.shell.js"></script>
+<script src="js/spa.shell1.js"></script>
 <script>
     $(function(){
         spa.initModule($("#login-box"));
