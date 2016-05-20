@@ -10,16 +10,15 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
 
-    <!-- text fonts -->
-    <link rel="stylesheet" href="css/fonts.googleapis.com.css" />
+
 
     <!-- ace styles -->
-    <link rel="stylesheet" href="css/ace.min.css" />
+    <link rel="stylesheet" href="css/ace.css" />
 
     <!--&lt;!&ndash;[if lte IE 9]>-->
     <!--<link rel="stylesheet" href="css/ace-part2.min.css" />-->
     <!--<![endif]&ndash;&gt;-->
-    <link rel="stylesheet" href="css/ace-rtl.min.css" />
+    <!--<link rel="stylesheet" href="css/ace-rtl.min.css" />-->
 
     <!--&lt;!&ndash;[if lte IE 9]>-->
     <!--<link rel="stylesheet" href="css/ace-ie.min.css" />-->
@@ -35,7 +34,7 @@
 
 </head>
 
-<body class="login-layout">
+<body class="login-layout light-login">
 <div class="main-container">
     <div class="main-content">
         <div class="row">
@@ -43,11 +42,11 @@
                 <div class="login-container">
                     <div class="center">
                         <h1>
-                            <i class="ace-icon fa fa-leaf green"></i>
-                            <span class="red">Ace</span>
-                            <span class="white" id="id-text2">应用管理</span>
+                            <!--<i class="fa fa-leaf green"></i>-->
+                            <span class="red">北京展览馆</span>
+                            <!--<span class="white" id="id-text2"></span>-->
                         </h1>
-                        <h4 class="blue" id="id-company-text">&copy; 公司名称</h4>
+                        <!--<h4 class="blue" id="id-company-text">&copy; 公司名称</h4>-->
                     </div>
 
                     <div class="space-6"></div>
@@ -58,38 +57,73 @@
                                 <div class="widget-main">
                                     <h4 class="header blue lighter bigger">
                                         <i class="ace-icon fa fa-coffee green"></i>
-                                        请输入您的信息
+                                        请输入您的身份信息
                                     </h4>
 
                                     <div class="space-6"></div>
 
-                                    <form>
+                                    <form id="phone-signin" name="phone-signin" action="code.php" method="post">
                                         <fieldset>
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Username" />
-															<i class="ace-icon fa fa-user"></i>
+															<input type="text" id="inputPhone" name="inputPhone" class="form-control user-phone" placeholder="手机号" />
+															<i class="ace-icon fa fa-mobile-phone"></i>
 														</span>
+                                                <div class="info-warning">
+                                                    <span class="label label-warning phone-warning-info">请输入手机号</span>
+                                                </div>
                                             </label>
+                                            <label class="inline clearfix user-code">
+                                                <button type="submit" class="get-testcode">获取验证码</button><input type="text" id="inputTestCode" name="inputTestCode" class="user-testcode" placeholder="输入验证码" />
+                                            </label>
+                                            <div class="space-4"></div>
+                                        </fieldset>
+                                    </form>
+                                    <form id="form-signin" name="form-signin" action="web.php" method="post">
+                                        <fieldset>
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" id="inputNumber" name="inputNumber" class="form-control" placeholder="票号" />
+															<i class="ace-icon fa fa-file-word-o"></i>
+														</span>
+                                                <!--<div class="info-warning">-->
+                                                    <!--<span class="label label-warning name-warning-info">请输入票号</span>-->
+                                                <!--</div>-->
+                                            </label>
+
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Password" />
+															<input type="text" id="inputName" name="inputName" class="form-control user-name" placeholder="姓名" />
+															<i class="ace-icon fa fa-user"></i>
+														</span>
+                                                <div class="info-warning">
+                                                    <span class="label label-warning name-warning-info">请输入姓名</span>
+                                                </div>
+                                            </label>
+
+
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" id="inputIdentityCard" name="inputIdentityCard" class="form-control user-id-card" placeholder="身份证号码" />
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
+                                                <div class="info-warning">
+                                                    <span class="label label-warning idcard-warning-info">请输入身份证</span>
+                                                </div>
                                             </label>
 
                                             <div class="space"></div>
 
                                             <div class="clearfix">
-                                                <label class="inline">
-                                                    <input type="checkbox" class="ace" />
-                                                    <span class="lbl"> 记住</span>
-                                                </label>
+                                                <!--<label class="inline">-->
+                                                    <!--<input type="checkbox" class="ace" />-->
+                                                    <!--<span class="lbl"> 记住</span>-->
+                                                <!--</label>-->
 
-                                                <button type="button" class="width-35 pull-right btn btn-sm btn-primary">
+                                                <button type="submit" class="width-35 pull-right btn btn-sm btn-primary user-login">
                                                     <i class="ace-icon fa fa-key"></i>
-                                                    <span class="bigger-110">登录</span>
+                                                    <span class="bigger-110">录入</span>
                                                 </button>
                                             </div>
 
@@ -97,177 +131,177 @@
                                         </fieldset>
                                     </form>
 
-                                    <div class="social-or-login center">
-                                        <span class="bigger-110">第三方登录</span>
-                                    </div>
+                                    <!--<div class="social-or-login center">-->
+                                        <!--<span class="bigger-110">第三方登录</span>-->
+                                    <!--</div>-->
 
-                                    <div class="space-6"></div>
+                                    <!--<div class="space-6"></div>-->
 
-                                    <div class="social-login center">
-                                        <a class="btn btn-primary">
-                                            <i class="ace-icon fa fa-facebook"></i>
-                                        </a>
+                                    <!--<div class="social-login center">-->
+                                        <!--<a class="btn btn-primary">-->
+                                            <!--<i class="ace-icon fa fa-facebook"></i>-->
+                                        <!--</a>-->
 
-                                        <a class="btn btn-info">
-                                            <i class="ace-icon fa fa-twitter"></i>
-                                        </a>
+                                        <!--<a class="btn btn-info">-->
+                                            <!--<i class="ace-icon fa fa-twitter"></i>-->
+                                        <!--</a>-->
 
-                                        <a class="btn btn-danger">
-                                            <i class="ace-icon fa fa-google-plus"></i>
-                                        </a>
-                                    </div>
+                                        <!--<a class="btn btn-danger">-->
+                                            <!--<i class="ace-icon fa fa-google-plus"></i>-->
+                                        <!--</a>-->
+                                    <!--</div>-->
                                 </div><!-- /.widget-main -->
 
-                                <div class="toolbar clearfix">
-                                    <div>
-                                        <a href="#" data-target="#forgot-box" class="forgot-password-link">
-                                            <i class="ace-icon fa fa-arrow-left"></i>
-                                            忘记密码
-                                        </a>
-                                    </div>
+                                <!--<div class="toolbar clearfix">-->
+                                    <!--<div>-->
+                                        <!--<a href="#" data-target="#forgot-box" class="forgot-password-link">-->
+                                            <!--<i class="ace-icon fa fa-arrow-left"></i>-->
+                                            <!--忘记密码-->
+                                        <!--</a>-->
+                                    <!--</div>-->
 
-                                    <div>
-                                        <a href="#" data-target="#signup-box" class="user-signup-link">
-                                            注册
-                                            <i class="ace-icon fa fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div><!-- /.widget-body -->
+                                    <!--<div>-->
+                                        <!--<a href="#" data-target="#signup-box" class="user-signup-link">-->
+                                            <!--注册-->
+                                            <!--<i class="ace-icon fa fa-arrow-right"></i>-->
+                                        <!--</a>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>&lt;!&ndash; /.widget-body &ndash;&gt;-->
                         </div><!-- /.login-box -->
 
-                        <div id="forgot-box" class="forgot-box widget-box no-border">
-                            <div class="widget-body">
-                                <div class="widget-main">
-                                    <h4 class="header red lighter bigger">
-                                        <i class="ace-icon fa fa-key"></i>
-                                        找回密码
-                                    </h4>
+                        <!--<div id="forgot-box" class="forgot-box widget-box no-border">-->
+                            <!--<div class="widget-body">-->
+                                <!--<div class="widget-main">-->
+                                    <!--<h4 class="header red lighter bigger">-->
+                                        <!--<i class="ace-icon fa fa-key"></i>-->
+                                        <!--找回密码-->
+                                    <!--</h4>-->
 
-                                    <div class="space-6"></div>
-                                    <p>
-                                        输入您的电子邮件和接收指令
-                                    </p>
+                                    <!--<div class="space-6"></div>-->
+                                    <!--<p>-->
+                                        <!--输入您的电子邮件和接收指令-->
+                                    <!--</p>-->
 
-                                    <form>
-                                        <fieldset>
-                                            <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" placeholder="Email" />
-															<i class="ace-icon fa fa-envelope"></i>
-														</span>
-                                            </label>
+                                    <!--<form>-->
+                                        <!--<fieldset>-->
+                                            <!--<label class="block clearfix">-->
+														<!--<span class="block input-icon input-icon-right">-->
+															<!--<input type="email" class="form-control" placeholder="Email" />-->
+															<!--<i class="ace-icon fa fa-envelope"></i>-->
+														<!--</span>-->
+                                            <!--</label>-->
 
-                                            <div class="clearfix">
-                                                <button type="button" class="width-35 pull-right btn btn-sm btn-danger">
-                                                    <i class="ace-icon fa fa-lightbulb-o"></i>
-                                                    <span class="bigger-110">发送邮件</span>
-                                                </button>
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                </div><!-- /.widget-main -->
+                                            <!--<div class="clearfix">-->
+                                                <!--<button type="button" class="width-35 pull-right btn btn-sm btn-danger">-->
+                                                    <!--<i class="ace-icon fa fa-lightbulb-o"></i>-->
+                                                    <!--<span class="bigger-110">发送邮件</span>-->
+                                                <!--</button>-->
+                                            <!--</div>-->
+                                        <!--</fieldset>-->
+                                    <!--</form>-->
+                                <!--</div>&lt;!&ndash; /.widget-main &ndash;&gt;-->
 
-                                <div class="toolbar center">
-                                    <a href="#" data-target="#login-box" class="back-to-login-link">
-                                        返回登录
-                                        <i class="ace-icon fa fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div><!-- /.widget-body -->
-                        </div><!-- /.forgot-box -->
+                                <!--<div class="toolbar center">-->
+                                    <!--<a href="#" data-target="#login-box" class="back-to-login-link">-->
+                                        <!--返回登录-->
+                                        <!--<i class="ace-icon fa fa-arrow-right"></i>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                            <!--</div>&lt;!&ndash; /.widget-body &ndash;&gt;-->
+                        <!--</div>&lt;!&ndash; /.forgot-box &ndash;&gt;-->
 
-                        <div id="signup-box" class="signup-box widget-box no-border">
-                            <div class="widget-body">
-                                <div class="widget-main">
-                                    <h4 class="header green lighter bigger">
-                                        <i class="ace-icon fa fa-users blue"></i>
-                                        用户注册
-                                    </h4>
+                        <!--<div id="signup-box" class="signup-box widget-box no-border">-->
+                            <!--<div class="widget-body">-->
+                                <!--<div class="widget-main">-->
+                                    <!--<h4 class="header green lighter bigger">-->
+                                        <!--<i class="ace-icon fa fa-users blue"></i>-->
+                                        <!--用户注册-->
+                                    <!--</h4>-->
 
-                                    <div class="space-6"></div>
-                                    <p>填写信息: </p>
+                                    <!--<div class="space-6"></div>-->
+                                    <!--<p>填写信息: </p>-->
 
-                                    <form>
-                                        <fieldset>
-                                            <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" placeholder="邮箱" />
-															<i class="ace-icon fa fa-envelope"></i>
-														</span>
-                                            </label>
+                                    <!--<form>-->
+                                        <!--<fieldset>-->
+                                            <!--<label class="block clearfix">-->
+														<!--<span class="block input-icon input-icon-right">-->
+															<!--<input type="email" class="form-control" placeholder="邮箱" />-->
+															<!--<i class="ace-icon fa fa-envelope"></i>-->
+														<!--</span>-->
+                                            <!--</label>-->
 
-                                            <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="用户名" />
-															<i class="ace-icon fa fa-user"></i>
-														</span>
-                                            </label>
+                                            <!--<label class="block clearfix">-->
+														<!--<span class="block input-icon input-icon-right">-->
+															<!--<input type="text" class="form-control" placeholder="用户名" />-->
+															<!--<i class="ace-icon fa fa-user"></i>-->
+														<!--</span>-->
+                                            <!--</label>-->
 
-                                            <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="密码" />
-															<i class="ace-icon fa fa-lock"></i>
-														</span>
-                                            </label>
+                                            <!--<label class="block clearfix">-->
+														<!--<span class="block input-icon input-icon-right">-->
+															<!--<input type="password" class="form-control" placeholder="密码" />-->
+															<!--<i class="ace-icon fa fa-lock"></i>-->
+														<!--</span>-->
+                                            <!--</label>-->
 
-                                            <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="确认密码" />
-															<i class="ace-icon fa fa-retweet"></i>
-														</span>
-                                            </label>
+                                            <!--<label class="block clearfix">-->
+														<!--<span class="block input-icon input-icon-right">-->
+															<!--<input type="password" class="form-control" placeholder="确认密码" />-->
+															<!--<i class="ace-icon fa fa-retweet"></i>-->
+														<!--</span>-->
+                                            <!--</label>-->
 
-                                            <label class="block">
-                                                <input type="checkbox" class="ace" />
-														<span class="lbl">
-															接受
-															<a href="#">用户协议</a>
-														</span>
-                                            </label>
+                                            <!--<label class="block">-->
+                                                <!--<input type="checkbox" class="ace" />-->
+														<!--<span class="lbl">-->
+															<!--接受-->
+															<!--<a href="#">用户协议</a>-->
+														<!--</span>-->
+                                            <!--</label>-->
 
-                                            <div class="space-24"></div>
+                                            <!--<div class="space-24"></div>-->
 
-                                            <div class="clearfix">
-                                                <button type="reset" class="width-30 pull-left btn btn-sm">
-                                                    <i class="ace-icon fa fa-refresh"></i>
-                                                    <span class="bigger-110">重置</span>
-                                                </button>
+                                            <!--<div class="clearfix">-->
+                                                <!--<button type="reset" class="width-30 pull-left btn btn-sm">-->
+                                                    <!--<i class="ace-icon fa fa-refresh"></i>-->
+                                                    <!--<span class="bigger-110">重置</span>-->
+                                                <!--</button>-->
 
-                                                <button type="button" class="width-65 pull-right btn btn-sm btn-success">
-                                                    <span class="bigger-110">注册</span>
+                                                <!--<button type="button" class="width-65 pull-right btn btn-sm btn-success">-->
+                                                    <!--<span class="bigger-110">注册</span>-->
 
-                                                    <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
-                                                </button>
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                </div>
+                                                    <!--<i class="ace-icon fa fa-arrow-right icon-on-right"></i>-->
+                                                <!--</button>-->
+                                            <!--</div>-->
+                                        <!--</fieldset>-->
+                                    <!--</form>-->
+                                <!--</div>-->
 
-                                <div class="toolbar center">
-                                    <a href="#" data-target="#login-box" class="back-to-login-link">
-                                        <i class="ace-icon fa fa-arrow-left"></i>
-                                        返回登录
-                                    </a>
-                                </div>
+                                <!--<div class="toolbar center">-->
+                                    <!--<a href="#" data-target="#login-box" class="back-to-login-link">-->
+                                        <!--<i class="ace-icon fa fa-arrow-left"></i>-->
+                                        <!--返回登录-->
+                                    <!--</a>-->
+                                <!--</div>-->
                             </div><!-- /.widget-body -->
                         </div><!-- /.signup-box -->
                     </div><!-- /.position-relative -->
 
-                    <div class="navbar-fixed-top align-right">
-                        <br />
-                        &nbsp;
-                        <a id="btn-login-dark" href="#">Dark</a>
-                        &nbsp;
-                        <span class="blue">/</span>
-                        &nbsp;
-                        <a id="btn-login-blur" href="#">Blur</a>
-                        &nbsp;
-                        <span class="blue">/</span>
-                        &nbsp;
-                        <a id="btn-login-light" href="#">Light</a>
-                        &nbsp; &nbsp; &nbsp;
-                    </div>
+                    <!--<div class="navbar-fixed-top align-right">-->
+                        <!--<br />-->
+                        <!--&nbsp;-->
+                        <!--<a id="btn-login-dark" href="#">Dark</a>-->
+                        <!--&nbsp;-->
+                        <!--<span class="blue">/</span>-->
+                        <!--&nbsp;-->
+                        <!--<a id="btn-login-blur" href="#">Blur</a>-->
+                        <!--&nbsp;-->
+                        <!--<span class="blue">/</span>-->
+                        <!--&nbsp;-->
+                        <!--<a id="btn-login-light" href="#">Light</a>-->
+                        <!--&nbsp; &nbsp; &nbsp;-->
+                    <!--</div>-->
                 </div>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -294,7 +328,7 @@
 
 <!--[if IE]>
 <script type="text/javascript">
-    window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+    window.jQuery || document.write("<script src='js/jquery1x.min.js'>"+"<"+"/script>");
 </script>
 <![endif]-->
 <!--<script type="text/javascript">-->
@@ -302,42 +336,50 @@
 <!--</script>-->
 
 <!-- inline scripts related to this page -->
-<script type="text/javascript">
-    jQuery(function($) {
-        $(document).on('click', '.toolbar a[data-target]', function(e) {
-            e.preventDefault();
-            var target = $(this).data('target');
-            $('.widget-box.visible').removeClass('visible');//hide others
-            $(target).addClass('visible');//show target
-        });
-    });
+<!--<script type="text/javascript">-->
+    <!--jQuery(function($) {-->
+        <!--$(document).on('click', '.toolbar a[data-target]', function(e) {-->
+            <!--e.preventDefault();-->
+            <!--var target = $(this).data('target');-->
+            <!--$('.widget-box.visible').removeClass('visible');//hide others-->
+            <!--$(target).addClass('visible');//show target-->
+        <!--});-->
+    <!--});-->
 
 
 
-    //you don't need this, just used for changing background
-    jQuery(function($) {
-        $('#btn-login-dark').on('click', function(e) {
-            $('body').attr('class', 'login-layout');
-            $('#id-text2').attr('class', 'white');
-            $('#id-company-text').attr('class', 'blue');
+    <!--//you don't need this, just used for changing background-->
+    <!--jQuery(function($) {-->
+        <!--$('#btn-login-dark').on('click', function(e) {-->
+            <!--$('body').attr('class', 'login-layout');-->
+            <!--$('#id-text2').attr('class', 'white');-->
+            <!--$('#id-company-text').attr('class', 'blue');-->
 
-            e.preventDefault();
-        });
-        $('#btn-login-light').on('click', function(e) {
-            $('body').attr('class', 'login-layout light-login');
-            $('#id-text2').attr('class', 'grey');
-            $('#id-company-text').attr('class', 'blue');
+            <!--e.preventDefault();-->
+        <!--});-->
+        <!--$('#btn-login-light').on('click', function(e) {-->
+            <!--$('body').attr('class', 'login-layout light-login');-->
+            <!--$('#id-text2').attr('class', 'grey');-->
+            <!--$('#id-company-text').attr('class', 'blue');-->
 
-            e.preventDefault();
-        });
-        $('#btn-login-blur').on('click', function(e) {
-            $('body').attr('class', 'login-layout blur-login');
-            $('#id-text2').attr('class', 'white');
-            $('#id-company-text').attr('class', 'light-blue');
+            <!--e.preventDefault();-->
+        <!--});-->
+        <!--$('#btn-login-blur').on('click', function(e) {-->
+            <!--$('body').attr('class', 'login-layout blur-login');-->
+            <!--$('#id-text2').attr('class', 'white');-->
+            <!--$('#id-company-text').attr('class', 'light-blue');-->
 
-            e.preventDefault();
-        });
+            <!--e.preventDefault();-->
+        <!--});-->
 
+    <!--});-->
+<!--</script>-->
+<script src="js/bootstrap.js"></script>
+<script src="js/spa.js"></script>
+<script src="js/spa.shell.js"></script>
+<script>
+    $(function(){
+        spa.initModule($("#login-box"));
     });
 </script>
 </body>
